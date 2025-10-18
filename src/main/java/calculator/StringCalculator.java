@@ -6,6 +6,8 @@ public class StringCalculator {
             return 0;
         }
 
+        input = input.replace("\\n", "\n");
+
         String[] numbers = splitInput(input);
 
         if (numbers.length == 1) {

@@ -32,6 +32,7 @@ public class StringCalculator {
 
     private static String[] splitInput(String input) {
         if (input.startsWith("//")) {
+            // 커스텀 구분자 처리
             int delimiterIndex = input.indexOf("\\n");
             if (delimiterIndex == -1) {
                 delimiterIndex = input.indexOf("\n");
@@ -44,6 +45,7 @@ public class StringCalculator {
             String numbers = input.substring(delimiterIndex + 1);
             return numbers.split(delimiter);
         }
+        // 기본 구분자: 쉼표, 콜론
         return input.split("[,:]");
 
     }

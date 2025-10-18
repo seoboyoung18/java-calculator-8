@@ -6,7 +6,7 @@ public class StringCalculator {
             return 0;
         }
 
-        String[] numbers = input.split("[,|:]");
+        String[] numbers = splitInput(input);
 
         if (numbers.length == 1) {
             String value = numbers[0];

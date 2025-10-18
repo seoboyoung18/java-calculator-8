@@ -30,7 +30,10 @@ public class StringCalculator {
 
     private static String[] splitInput(String input) {
         if (input.startsWith("//")) {
-            int delimiterIndex = input.indexOf("\n");
+            int delimiterIndex = input.indexOf("\\n");
+            if (delimiterIndex == -1) {
+                delimiterIndex = input.indexOf("\n");
+            }
 
             if (delimiterIndex == -1) {
                 throw new IllegalArgumentException("커스텀 구분자 형식이 잘못되었습니다.");

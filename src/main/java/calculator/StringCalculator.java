@@ -15,8 +15,8 @@ public class StringCalculator {
             if (!value.matches("\\d+")) {
                 throw new IllegalArgumentException("잘못된 입력입니다: " + value);
             }
-
-            throw new IllegalArgumentException("구분자가 포함된 형식이 아닙니다: " + value);
+            // 숫자 하나만 있을 경우 그대로 반환
+            return Integer.parseInt(value);
         }
 
         int sum = 0;
@@ -24,7 +24,13 @@ public class StringCalculator {
             if (!num.matches("\\d+")) {
                 throw new IllegalArgumentException("잘못된 입력: " + num);
             }
-            sum += Integer.parseInt(num);
+
+            int n = Integer.parseInt(num);
+            if (n < 0) {
+                throw new IllegalArgumentException("음수는 허용되지 않습니다: " + n);
+            }
+
+            sum += n;
         }
 
         return sum;
@@ -37,7 +43,7 @@ public class StringCalculator {
             if (delimiterIndex == -1) {
                 delimiterIndex = input.indexOf("\n");
             }
-            
+
             if (delimiterIndex == -1) {
                 throw new IllegalArgumentException("커스텀 구분자 형식이 잘못되었습니다.");
             }

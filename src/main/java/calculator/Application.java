@@ -9,6 +9,6 @@ public class Application {
 
         //결과 출력
         int result = StringCalculator.add(input);
-        System.out.println("결과: " + result);
+        System.out.println("결과 : " + result);
     }
 }

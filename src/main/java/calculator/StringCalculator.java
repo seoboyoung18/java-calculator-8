@@ -10,7 +10,6 @@ public class StringCalculator {
 
         String[] numbers = splitInput(input);
 
-        //예외처리
         if (numbers.length == 1) {
             String value = numbers[0];
             if (!value.matches("\\d+")) {
@@ -21,7 +20,6 @@ public class StringCalculator {
         }
 
         int sum = 0;
-        //예외처리
         for (String num : numbers) {
             if (!num.matches("\\d+")) {
                 throw new IllegalArgumentException("잘못된 입력: " + num);
@@ -39,7 +37,7 @@ public class StringCalculator {
             if (delimiterIndex == -1) {
                 delimiterIndex = input.indexOf("\n");
             }
-            // 예외처리
+            
             if (delimiterIndex == -1) {
                 throw new IllegalArgumentException("커스텀 구분자 형식이 잘못되었습니다.");
             }

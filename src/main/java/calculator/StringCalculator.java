@@ -32,12 +32,12 @@ public class StringCalculator {
 
     private static String[] splitInput(String input) {
         if (input.startsWith("//")) {
-            // 커스텀 구분자 처리
+            // 커스텀 구분자 생성 및 처리
             int delimiterIndex = input.indexOf("\\n");
             if (delimiterIndex == -1) {
                 delimiterIndex = input.indexOf("\n");
             }
-
+            // 예외처리
             if (delimiterIndex == -1) {
                 throw new IllegalArgumentException("커스텀 구분자 형식이 잘못되었습니다.");
             }
